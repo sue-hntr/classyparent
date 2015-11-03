@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root 'parents#index'
+
+  # devise_for :models
+
+  resources :parents, :children, :public_schools, :hobby_class_sports
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
