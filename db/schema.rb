@@ -11,9 +11,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022150702) do
+ActiveRecord::Schema.define(version: 20151105202745) do
 
   create_table "children", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "nickname"
+    t.string   "parent_name"
+    t.integer  "parent_id"
+    t.text     "family_info"
+    t.text     "bdaymonth"
+    t.boolean  "bdaywkone"
+    t.boolean  "bdaywktwo"
+    t.boolean  "bdaywkthree"
+    t.boolean  "bdaywkfour"
+    t.string   "hobbyteachone"
+    t.string   "hobbyteachtwo"
+    t.string   "hobbyteachthree"
+    t.string   "hobbyteachfour"
+    t.float    "old_latitude"
+    t.float    "old_longitude"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "families", force: :cascade do |t|
+    t.integer  "parent_id"
+    t.integer  "child_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "child_id"
+    t.integer  "playfriend_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "hobby_class_sports", force: :cascade do |t|
+    t.string   "teachername"
+    t.string   "class_name"
+    t.string   "teacher_email"
+    t.string   "teacher_cell"
+    t.integer  "teacher_userid"
+    t.string   "schoolname"
+    t.string   "school_email"
+    t.string   "school_url"
+    t.string   "school_phone"
+    t.string   "emergency_contactname"
+    t.string   "emergency_contactphone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "carpool"
+    t.integer  "school_userid"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "old_latitude"
+    t.float    "old_longitude"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "parents", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "cellphone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.text     "family_info"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "old_latitude"
+    t.float    "old_longitude"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "playfriends", force: :cascade do |t|
     t.string   "fname"
     t.string   "lname"
     t.string   "nickname"
@@ -24,10 +106,9 @@ ActiveRecord::Schema.define(version: 20151022150702) do
     t.string   "city"
     t.string   "state"
     t.string   "zipcode"
-    t.string   "parent_name"
+    t.string   "parent_name1"
     t.text     "family_info"
     t.datetime "bday"
-    t.string   "country"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "userid"
@@ -41,29 +122,7 @@ ActiveRecord::Schema.define(version: 20151022150702) do
     t.datetime "updated_at",         null: false
   end
 
-  create_table "parents", force: :cascade do |t|
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "email"
-    t.string   "cellphone"
-    t.string   "address1"
-    t.string   "address2"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.string   "kid_name"
-    t.text     "family_info"
-    t.string   "country"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "userid"
-    t.float    "old_latitude"
-    t.float    "old_longitude"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "publicschools", force: :cascade do |t|
+  create_table "public_schools", force: :cascade do |t|
     t.string   "teachername"
     t.string   "grade"
     t.string   "teacher_email"
@@ -82,6 +141,32 @@ ActiveRecord::Schema.define(version: 20151022150702) do
     t.string   "state"
     t.string   "zipcode"
     t.integer  "school_userid"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.float    "old_latitude"
+    t.float    "old_longitude"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "school_hobbies", force: :cascade do |t|
+    t.string   "teachername"
+    t.string   "class_name"
+    t.string   "grade"
+    t.string   "teacher_email"
+    t.string   "teacher_cell"
+    t.string   "schoolname"
+    t.string   "school_email"
+    t.string   "school_url"
+    t.string   "school_phone"
+    t.string   "emergency_contactname"
+    t.string   "emergency_contactphone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "carpool"
     t.float    "latitude"
     t.float    "longitude"
     t.float    "old_latitude"

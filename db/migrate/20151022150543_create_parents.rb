@@ -10,12 +10,9 @@ class CreateParents < ActiveRecord::Migration
     	t.string	:city
     	t.string	:state
     	t.string	:zipcode
-    	t.string	:kid_name
     	t.text		:family_info
-    	t.string	:country
     	t.float    	:latitude
     	t.float    	:longitude
-    	t.integer	:userid
     	t.float    	:old_latitude
     	t.float    	:old_longitude
       t.timestamps null: false

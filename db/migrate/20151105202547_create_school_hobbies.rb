@@ -1,11 +1,11 @@
-class CreateHobbyClassSports < ActiveRecord::Migration
+class CreateSchoolHobbies < ActiveRecord::Migration
   def change
-    create_table :hobby_class_sports do |t|
+    create_table :school_hobbies do |t|
 		t.string	:teachername
     	t.string	:class_name
+        t.string    :grade
     	t.string	:teacher_email
     	t.string	:teacher_cell
-    	t.integer	:teacher_userid
     	t.string	:schoolname
  		t.string	:school_email
 		t.string	:school_url
@@ -18,13 +18,11 @@ class CreateHobbyClassSports < ActiveRecord::Migration
     	t.string	:state
     	t.string	:zipcode
     	t.string	:carpool
-    	t.integer	:school_userid
     	t.float    	:latitude
     	t.float    	:longitude
     	t.float    	:old_latitude
     	t.float    	:old_longitude
-	    t.timestamps null: false
-        t.timestamps null: false
+      t.timestamps null: false
     end
   end
 end
