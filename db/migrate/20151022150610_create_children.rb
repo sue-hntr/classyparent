@@ -4,24 +4,18 @@ class CreateChildren < ActiveRecord::Migration
 		t.string	:fname
     	t.string	:lname
     	t.string	:nickname
-		t.string	:email
-		t.string	:cellphone
-    	t.string	:address1
-    	t.string	:address2
-    	t.string	:city
-    	t.string	:state
-    	t.string	:zipcode
     	t.string	:parent_name
+        t.integer   :parent_id
     	t.text		:family_info
-    	t.datetime	:bday
-    	t.string	:country
-    	t.float    	:latitude
-    	t.float    	:longitude
-    	t.integer	:userid
-    	t.integer	:teacher_userid
-    	t.integer	:hobbyteach1_userid
-    	t.integer	:hobbyteach2_userid
-    	t.integer	:hobbyteach3_userid
+        t.text      :bdaymonth
+        t.boolean   :bdaywkone
+        t.boolean   :bdaywktwo
+        t.boolean   :bdaywkthree
+        t.boolean   :bdaywkfour
+    	t.string	:hobbyteachone
+    	t.string	:hobbyteachtwo
+    	t.string	:hobbyteachthree
+        t.string    :hobbyteachfour
     	t.float    	:old_latitude
     	t.float    	:old_longitude
 	    t.timestamps null: false
