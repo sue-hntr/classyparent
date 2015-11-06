@@ -2,19 +2,19 @@
 <br>
 <h1>Our Family Info form</h1>
 <br>
+
    <%= form_for @parent do |f| %>
 
-      <%= f.label :FirstName %> <%= f.text_field :fname %><br>
-      <%= f.label :LastName %> <%= f.text_field :lname %><br>
-      <%= f.label :Email %> <%= f.text_field :email %><br>
-      <%= f.label :cellphone %> <%= f.text_field :cellphone %><br>
-      <%= f.label :AddressLine1 %> <%= f.text_field :address1 %><br>
+      <%= f.label :Parent_First_Name %> <%= f.text_field :fname %><br>
+      <%= f.label :Parent_Last_Name %> <%= f.text_field :lname %><br>
+      <%= f.label :Parent_Email %> <%= f.text_field :email %><br>
+      <%= f.label :Parent_Mobilephone %> <%= f.text_field :cellphone %><br>
+      <%= f.label :Parent_AddressLine1 %> <%= f.text_field :address1 %><br>
       <%= f.label :AddressLine2 %> <%= f.text_field :address2 %><br>
       <%= f.label :City %> <%= f.text_field :city %><br>
       <%= f.label :State %> <%= f.text_field :state %><br>
       <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-      <%= f.label :password %>
-      <%= f.text_field :password %>
+      <%= f.label :PASSWORD %><%= f.text_field :password %>
       <%= f.submit "create" %>
     <% end %>
 <br>

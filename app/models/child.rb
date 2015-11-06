@@ -1,6 +1,5 @@
 class Child < ActiveRecord::Base
 	belongs_to	:parents
-	belongs_to	:families
-	has_many	:playfriends
-	has_many	:school_hobbies
+	has_many	:playfriends, through: :friendships
+	has_many	:school_hobbies, through: :child_attendance
 end

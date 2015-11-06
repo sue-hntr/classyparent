@@ -13,12 +13,12 @@ class ParentsController < ApplicationController
 
 
 	def create   
-		@parent = Parent.new(user_params)   
+		@parent = Parent.new(parent_params)   
 		if @parent.save
-			redirect_to parent_path
-
+			redirect_to parent_path(@parent.id)
+		#	binding.pry
 		else
-			flash[:error] = @user.errors.full_messages.to_sentence
+			flash[:error] = @parent.errors.full_messages.to_sentence
 			render :new
 		end	
 	end
@@ -46,4 +46,4 @@ class ParentsController < ApplicationController
 		params.require(:parent).permit(:fname, :lname, :email, :cellphone, :address1, :address2, :city, :state, :zipcode, :family_info, :password)
 	   end
 	end
-end
+

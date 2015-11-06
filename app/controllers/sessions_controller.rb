@@ -18,35 +18,35 @@ def create
 	p_password = parent_info[:password]
 	@parent = Parent.where(email: p_email).first
 	# puts "XXXXXXXXXXXXXXXXXXXXXX"
-	# puts @user.password
+	# puts @parent.password
 	# puts "YYYYYYYYYYYYYYYYYYYYYY"
-	# puts user_info
+	# puts parent_info
 	# puts "ZZZZZZZZZZZZZZZZZZZZZZZ"
-	# puts username
+	# puts p_email
 	if @parent == nil
 		flash[:alert] = "Not on list. Please sign up."
 		redirect_to new_parent_path
-	# elsif @user.password != pass
+	# elsif @parent.password != p_password
 	# 	flash[:alert] = "Username/Password mismatch. Please try again."
 	#     redirect_to login_path
 	# else
-	# 	session[:user_id] = @user.id
-	# 	redirect_to users_path
+	# 	session[:user_id] = @parent.id
+	# 	redirect_to parent_path
 	# 	return
 	end
 end
 
 
-def destroy
-	username = params[:username]
-	flash[:alert] = "You are signed out."
-	session[:user_id] = nil
-	redirect_to root_path
-end
+# def destroy
+# 	username = params[:username]
+# 	flash[:alert] = "You are signed out."
+# 	session[:user_id] = nil
+# 	redirect_to root_path
+# end
 
-private
-	def parent_params
-		params.require(:parent).permit(:username, :email)
-	   end
-	end
+	private
+		def parent_params
+			params.require(:parent).permit(:email, :password)
+		end
+
 end

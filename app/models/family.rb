@@ -1,4 +1,4 @@
 class Family < ActiveRecord::Base
 	belongs_to	:parents
-	has_many	:children
+	belongs_to	:children
 end
