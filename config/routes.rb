@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
   root 'parents#index'
 
+    get  'login' => 'sessions#new', as: :login
+    post   'login' => 'sessions#create'
+    delete 'logout' => 'sessions#destroy'
+
+
   # devise_for :models
 
-  resources :parents, :children, :public_schools, :hobby_class_sports
+  resources :parents, :children, :school_hobbies
+
+#join tables below
+  resources :child_attendances, :families, :friendships
 
 
   # The priority is based upon order of creation: first created -> highest priority.

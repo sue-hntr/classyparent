@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106151940) do
+ActiveRecord::Schema.define(version: 20151106194226) do
+
+  create_table "child_attendances", force: :cascade do |t|
+    t.integer  "child_id"
+    t.integer  "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "children", force: :cascade do |t|
     t.string   "fname"
@@ -60,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151106151940) do
     t.string   "state"
     t.string   "zipcode"
     t.text     "family_info"
+    t.text     "password"
     t.float    "latitude"
     t.float    "longitude"
     t.float    "old_latitude"
@@ -93,4 +101,5 @@ ActiveRecord::Schema.define(version: 20151106151940) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
 end

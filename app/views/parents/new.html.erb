@@ -1,7 +1,8 @@
+<!-- parent.new.html.erb -->
 <br>
 <h1>Our Family Info form</h1>
 <br>
-   <%= form_for @user do |f| %>
+   <%= form_for @parent do |f| %>
 
       <%= f.label :FirstName %> <%= f.text_field :fname %><br>
       <%= f.label :LastName %> <%= f.text_field :lname %><br>
@@ -12,9 +13,10 @@
       <%= f.label :City %> <%= f.text_field :city %><br>
       <%= f.label :State %> <%= f.text_field :state %><br>
       <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-
       <%= f.label :password %>
       <%= f.text_field :password %>
-
       <%= f.submit "create" %>
     <% end %>
+<br>
+<br>
+<%= link_to "Log In", login_path %>
