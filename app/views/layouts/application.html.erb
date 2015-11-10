@@ -2,10 +2,21 @@
 <html>
 <head>
   <title>Classyparent</title>
+  <%= include_gon(:init => true) %>
+<!-- ####### ABOVE LINE from https://github.com/gazay/gon ####### -->  
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<!-- ########## RAILS CODE ABOVE ############### -->
+<!-- # GMAPS4RAILS src links removed/replaced by my Google JS API # -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6E_JvHhk8b4SnD0wbWk9lOaX_AkRc1ug"
+  type="text/javascript"></script>
+
+
 </head>
+<!-- ############### HEAD #################### -->
+<!-- ############### BODY #################### -->
+
 <body>
 	<% if flash[:notice] %>
 	<div class="flash notice">
@@ -28,7 +39,6 @@
 		</span>
 	</div>
 <% end %>
-
 
 <%= yield %>
 

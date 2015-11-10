@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 
 	def parent_user
-		if session[:parent_id]
-			@current_parent = Parent.find(session[:parent_id])
+		if session[:user_id]
+			@current_parent = Parent.find(session[:user_id])
 		end
 	end
 
@@ -23,26 +23,27 @@ def create
 	# puts parent_info
 	# puts "ZZZZZZZZZZZZZZZZZZZZZZZ"
 	# puts p_email
+	# binding.pry
 	if @parent == nil
 		flash[:alert] = "Not on list. Please sign up."
 		redirect_to new_parent_path
-	# elsif @parent.password != p_password
-	# 	flash[:alert] = "Username/Password mismatch. Please try again."
-	#     redirect_to login_path
-	# else
-	# 	session[:user_id] = @parent.id
-	# 	redirect_to parent_path
-	# 	return
+	 elsif @parent.password != p_password
+		flash[:alert] = "Username/Password mismatch. Please try again."
+	    redirect_to login_path
+	else
+		session[:user_id] = @parent.id
+		redirect_to parent_path(@parent.id)
+		return
 	end
 end
 
 
-# def destroy
-# 	username = params[:username]
-# 	flash[:alert] = "You are signed out."
-# 	session[:user_id] = nil
-# 	redirect_to root_path
-# end
+def destroy
+	username = params[:username]
+	flash[:alert] = "You are signed out."
+	session[:user_id] = nil
+	redirect_to root_path
+end
 
 	private
 		def parent_params

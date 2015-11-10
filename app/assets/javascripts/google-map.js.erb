@@ -1,0 +1,36 @@
+// assets.google_maps.js
+
+$(document).ready
+(//e
+
+function initMap() {//d
+
+ var MyLatlng = new google.maps.LatLng
+  ( //c
+      gon.geo_parent.latitude, gon.geo_parent.longitude
+   ); //c
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom:  13,
+    center: MyLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+     
+  });
+
+var icon = {  //f  also--> icon used in parentmarker
+    url: "<%= asset_path 'golden_star.png' %>", // url
+    scaledSize: new google.maps.Size(25, 25), // scaled size
+    origin: new google.maps.Point(0,0), // origin
+    anchor: new google.maps.Point(0, 0) // anchor
+}; //f
+
+  var parentmarker = new google.maps.Marker({
+    position: MyLatlng,
+    map: map,
+    icon: icon
+  });
+  parentmarker.setMap(map);
+} //d
+) //e
+
+
