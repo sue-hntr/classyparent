@@ -11,6 +11,7 @@ class CreateParents < ActiveRecord::Migration
     	t.string	:state
     	t.string	:zipcode
     	t.text		:family_info
+        t.text      :password
     	t.float    	:latitude
     	t.float    	:longitude
     	t.float    	:old_latitude

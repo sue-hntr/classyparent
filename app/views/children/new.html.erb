@@ -1,0 +1,26 @@
+<!-- children.new.html.erb -->
+<br>
+<h1>Child Info form</h1>
+<br>
+   <%= form_for @child do |f| %>
+
+      <%= f.label :FirstName %> <%= f.text_field :fname %><br>
+
+      <%= f.label :LastName %> <%= f.text_field :lname %><br>
+
+      <%= f.label :nickname %> <%= f.text_field :nickname %><br>
+
+      <%= f.label :ParentName %> <%= f.text_field :parent_name %><br>
+
+      <%= f.label :Public_School %> <%= f.text_field :hobbyteachone %><br>
+
+      <%= f.label :Favorite_Group_Hobby %> <%= f.text_field :hobbyteachtwo %><br>
+
+      <%= f.label :Hobby_Class2 %> <%= f.text_field :hobbyteachthree %><br>
+
+      <%= f.label :Hobby_Class3 %> <%= f.text_field :hobbyteachfour %><br>
+      <%= f.submit "create" %>
+    <% end %>
+<br>
+<br>
+<%= link_to "Log In", login_path %>

@@ -1,4 +1,4 @@
 class Friendship < ActiveRecord::Base
 	belongs_to	:children
-	belongs_to	:playfriend, class_name: 'child'
+	belongs_to	:playfriends, class_name: 'child'
 end

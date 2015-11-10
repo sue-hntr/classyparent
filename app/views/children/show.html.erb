@@ -1,0 +1,29 @@
+<!-- child.show.html.erb -->
+<br>
+<h1>Child Interest Info</h1>
+<br>
+<br>
+<h3><%= "Full Name:  #{@child.fname} #{@child.lname}" %></h3>
+<br>
+<h3><%= "Nickname:  #{@child.nickname}" %></h3>
+<br>
+<h3><%= "ParentName:  #{@child.parent_name}" %></h3>
+<br>
+<%= "Elementary School:  #{@child.hobbyteachone}" %></h3>
+<br>
+<%= "Favorite Group Hobby:  #{@child.hobbyteachtwo}" %></h3>
+<br>
+<%= "Other Favoite Hobby:  #{@child.hobbyteachthree}" %></h3>
+<br>
+<br>
+<%= "Other Favoite Hobby:  #{@child.hobbyteachfour}" %></h3>
+<br>
+
+<br>
+
+<%= link_to "Add more parents", new_parent_path %>
+<br>
+<br>
+<%= link_to "Add Kids", new_child_path %>
+
+

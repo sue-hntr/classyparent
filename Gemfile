@@ -29,7 +29,7 @@ gem 'geocoder'
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails'
 gem 'gon'
-
+gem 'pry', '~> 0.10.3'
 
 
 
