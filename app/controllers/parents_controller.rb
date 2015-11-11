@@ -8,17 +8,23 @@ class ParentsController < ApplicationController
 
 	def index
 		@parent = parent_user
-		@parent.latitude = parent_user.latitude
 		gon.geo_parent = @parent
-		puts gon.geo_parent.latitude
-		# @parents = Parents.all
-		@hash = Gmaps4rails.build_markers(@parent) do |parent, marker|
-			marker.lat @parent.latitude
-			marker.lng @parent.longitude
-#			marker.infowindow render_to_string()
-		end
-		gon.geo_hash = @hash
+		@parents = Parent.all
+		# for i in 1..Parent.count
+		# 	if Parent.find(i) != parent_user
+				@hash = Gmaps4rails.build_markers(@parents) do |parent, marker|
+  					marker.lat parent.latitude
+  					marker.lng parent.longitude
+  				 # puts "XXXXXXXXXXXX"
+  				 # puts Parent.find(i).latitude
+   		# 		end
+  			# end
+  		end
+  		puts @hash.inspect
+
 	end
+
+
 
 	def new
 		@parent = Parent.new
@@ -49,7 +55,6 @@ class ParentsController < ApplicationController
 
 	def show
 		@parent = parent_user
-#		session[:user_id] = @parent.id
 	end
 
 	# p_fname = parent_info[:fname]
@@ -64,20 +69,8 @@ class ParentsController < ApplicationController
 	# p_password = parent_info[:password]
 
 
-#where does this code come from? Is it from downtown philadelphia?
-	def get_location
-		@location = request.location
-		if location.latitude == 0.0
-			@location = Geocoder.search("38.122.23.194").first
-		end
-	end
-
-	def parentlist
-		@parents - Parent.all
-	end
-
 	private
 	def parent_params
 		params.require(:parent).permit(:fname, :lname, :email, :cellphone, :address1, :address2, :city, :state, :zipcode, :family_info, :password)
-	   end
 	end
+end
