@@ -1,6 +1,7 @@
 class SchoolHobby < ActiveRecord::Base
 	has_many	:children, through: :child_attendances
-
+	has_many	:child_attendances
+	
 	geocoded_by :full_address
 
 	after_validation :geocode

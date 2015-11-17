@@ -1,10 +1,12 @@
 class ParentsController < ApplicationController
+#note: put the def parent_user in applications_controller
 
- 	def parent_user
-		if session[:user_id]
-			@current_parent = Parent.find(session[:user_id])
-		end
-	end
+#reference only
+ # 	def parent_user
+	# 	if session[:user_id]
+	# 		@current_parent = Parent.find(session[:user_id])
+	# 	end
+	# end
 
 	def index
 		@parent = parent_user
@@ -21,7 +23,6 @@ class ParentsController < ApplicationController
   			# end
   		end
   		puts @hash.inspect
-
 	end
 
 
@@ -33,6 +34,7 @@ class ParentsController < ApplicationController
 	def create   
 		@parent = Parent.new(parent_params)   
 		if @parent.save
+			flash[:alert] = "Info saved"
 			redirect_to parent_path(@parent.id)
 		else
 			flash[:error] = @parent.errors.full_messages.to_sentence
@@ -47,6 +49,7 @@ class ParentsController < ApplicationController
 	def update
 		@parent = parent_user
 		if 	@parent.update(parent_params)
+			flash[:alert] = "Info updated"
 			redirect_to parent_path(@parent.id)
 		else
 			render :edit
@@ -56,18 +59,6 @@ class ParentsController < ApplicationController
 	def show
 		@parent = parent_user
 	end
-
-	# p_fname = parent_info[:fname]
-	# p_lname = parent_info[:lname]
-	# p_email = parent_info[:email]
-	# p_cellphone = parent_info[:cellphone]
-	# p_address1 = parent_info[:address1]
-	# p_address2 = parent_info[:address2]
-	# p_city = parent_info[:city]
-	# p_state = parent_info[:state]
-	# p_zipcode = parent_info[:zipcode]
-	# p_password = parent_info[:password]
-
 
 	private
 	def parent_params

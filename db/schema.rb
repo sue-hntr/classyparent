@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(version: 20151106194226) do
 
   create_table "child_attendances", force: :cascade do |t|
     t.integer  "child_id"
-    t.integer  "school_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "school_hobby_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "children", force: :cascade do |t|
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 20151106194226) do
   create_table "school_hobbies", force: :cascade do |t|
     t.string   "teachername"
     t.string   "class_name"
+    t.boolean  "is_public_school"
     t.string   "grade"
     t.string   "teacher_email"
     t.string   "teacher_cell"

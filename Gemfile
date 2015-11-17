@@ -24,13 +24,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-# use for grabbing ruby and putting into javascript
+#ADDITIONAL GEMS
+#map gems
 gem 'geocoder'
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails'
+#move variables from ruby to javascript
 gem 'gon'
+#use for development testing
 gem 'pry', '~> 0.10.3'
-
+#use for generating a simple calendar for parents
+gem "simple_calendar", "~> 2.0"
 
 
 # Use ActiveModel has_secure_password

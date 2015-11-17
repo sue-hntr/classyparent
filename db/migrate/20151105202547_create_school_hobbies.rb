@@ -3,6 +3,7 @@ class CreateSchoolHobbies < ActiveRecord::Migration
     create_table :school_hobbies do |t|
 		t.string	:teachername
     	t.string	:class_name
+        t.boolean   :is_public_school
         t.string    :grade
     	t.string	:teacher_email
     	t.string	:teacher_cell
