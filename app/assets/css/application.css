@@ -1,77 +1,17 @@
 /*
-Error: File to import not found or unreadable: bootstrap/variables.
-       Load path: /Users/suzannehunter/Desktop/classyparent/app/assets/stylesheets
-        on line 9 of stylesheets/_bootstrap-custom.scss
-        from line 16 of stylesheets/application.scss
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
 
-4:  *
-5:  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
-6:  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
-7:  *
-8:  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
-9:  * compiled file so the styles you add here take precedence over styles defined in any styles
-10:  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
-11:  * file per style scope.
-12:  *
-13:  *\/
-14: /*install the next instructions from bootstrap gem  removed reqre_tree and reqre_self also *\/
-
-Backtrace:
-stylesheets/_bootstrap-custom.scss:9
-stylesheets/application.scss:16
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/import_node.rb:45:in `import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/import_node.rb:37:in `css_import?'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block (2 levels) in visit_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `map'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:326:in `block in visit_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:88:in `block in with_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:88:in `with_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:323:in `visit_import'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: bootstrap/variables.\A        Load path: /Users/suzannehunter/Desktop/classyparent/app/assets/stylesheets\A         on line 9 of stylesheets/_bootstrap-custom.scss\A         from line 16 of stylesheets/application.scss\A \A 4:  *\A 5:  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,\A 6:  * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.\A 7:  *\A 8:  * You're free to add application-wide styles to this file and they'll appear at the bottom of the\A 9:  * compiled file so the styles you add here take precedence over styles defined in any styles\A 10:  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new\A 11:  * file per style scope.\A 12:  *\A 13:  */\A 14: /*install the next instructions from bootstrap gem  removed reqre_tree and reqre_self also */"; }
+/*# sourceMappingURL=application.css.map */
