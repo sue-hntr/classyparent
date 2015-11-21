@@ -16,14 +16,6 @@
 
 
 
-<div>
-<% @hash.each do |g| %>
-<%= g %> <br/>
-<%end%>
-
-</div>
 <script type="text/javascript">
   initMap(<%=raw @hash.to_json %>);
-
-
 </script>

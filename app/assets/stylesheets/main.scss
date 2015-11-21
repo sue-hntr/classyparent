@@ -1,0 +1,70 @@
+body{
+	background-color: $mhtr-white;
+}
+
+img{
+	padding-top: 10px;
+	float: left;
+}
+
+p{
+	@include fontish(2);
+}
+
+footer{
+	@include fontish(1);
+}
+
+
+/**********DIV CLASSES for large screen**************/
+
+
+.mobilehide{
+	display: none;
+}
+
+
+/********FONT SIZES SMALLEST TO LARGEST ***************/
+
+.sizef1{
+	@include fontish(1);
+} /*FOR FOOTER*/
+
+.sizef2{
+	@include fontish(2);
+} /*FOR NAVBAR*/
+
+.sizef3{
+	@include fontish(3);
+}
+.sizef4{
+	@include fontish(4);
+}
+.sizef5{
+	@include fontish(5);
+}
+.sizef6{
+	@include fontish(6);
+}
+
+/********FONT SIZES SMALLEST TO LARGEST ***************/
+
+
+@media screen and (max-width: 800px){ 
+	body{
+		padding-left: 0;
+		margin-left: 0;
+		display: block;
+	}
+	.seek{
+	/*	HIDE LARGE LOGO ON MOBILE*/
+		display: none;
+	}
+	.mobilehide{
+		/*SHOW SMALL LOGO ON MOBILE*/
+		display: block;
+	}
+
+
+
+}

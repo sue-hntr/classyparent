@@ -8,25 +8,22 @@ class ParentsController < ApplicationController
 	# 	end
 	# end
 
+	def family
+		@parent = parent_user
+		@child = @parent.children
+	end
+
+
 	def index
 		@parent = parent_user
 		gon.geo_parent = @parent
 		@parents = Parent.all
-		# for i in 1..Parent.count
-		# 	if Parent.find(i) != parent_user
 				@hash = Gmaps4rails.build_markers(@parents) do |parent, marker|
   					marker.lat parent.latitude
   					marker.lng parent.longitude
-  				 # puts "XXXXXXXXXXXX"
-  				 # puts Parent.find(i).latitude
-   		# 		end
-  			# end
   		end
-  		puts @hash.inspect
 	end
-
-
-
+	
 	def new
 		@parent = Parent.new
 	end

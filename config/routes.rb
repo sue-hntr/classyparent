@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'parents#new'
 
+    get  'members' => 'parents#members', as: :family_member
+
+
     get  'login' => 'sessions#new', as: :login
     post   'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
