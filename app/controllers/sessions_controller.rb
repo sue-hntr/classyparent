@@ -1,10 +1,13 @@
 class SessionsController < ApplicationController
 
-	def parent_user
-		if session[:user_id]
-			@current_parent = Parent.find(session[:user_id])
-		end
-	end
+#note: put the def current_parent in applications_controller
+
+#reference only
+ # 	def current_parent
+	# 	if session[:user_id]
+	# 		@current_parent = Parent.find(session[:user_id])
+	# 	end
+	# end
 
 
 def new

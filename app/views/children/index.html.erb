@@ -1,1 +1,68 @@
-<h1>Child's</h1>
+<!-- children.index.html.erb -->
+<div class="child_clr">
+<!-- ####### child.playfriends ####### -->
+<h1> BFFs that you already have: </h1>
+<table border = "0", style="width=100%">
+	<tr>
+		<h3><td>Child's Name</td>
+			<td>Child's Age </td>
+			<td>Child's School</td>
+			<td>Still Friends?</td>
+		</tr>
+		<% @new_friends.each do |f| %>
+		<% if @new_friends == nil %>
+			<tr>
+				<td>Choose some</td>
+				<td>&nbsp</td>
+				<td>friends from</td>
+				<td>below</td>
+			</tr>
+		<% else %>
+			<tr>
+				<td><%= "#{f.fname}  #{f.lname}" %></td>
+				<td><%= f.age_years %></td>
+				<td><%= f.hobbyteachone %></td>
+				<td>Yes</td>
+			</tr>
+			<% end %><!--  end if -->
+		<% end %><!--  end do -->
+	</table>
+<br>
+<br>
+<br>
+<!-- ######### child.all ########## -->
+<h1> Choose new friends to make</h1>	
+<h6>Your current friends are still on this list as "Drop Friend?". You can add more friends by selecting kids with "Add Friends?" They will be added to you list above.</h6>  
+<table border = "0", style="width=100%">
+	<tr>
+		<h3><td>Child's Name</td>
+			<td>Child's Age </td>
+			<td>Child's School</td>
+			<td>Add Friend?</td>
+		</tr>
+		<% @make_friends.each do |f| %>
+		<tr>
+			<td><%= "#{f.fname}  #{f.lname}" %></td>
+			<td><%= f.age_years %></td>
+			<td><%= f.hobbyteachone %></td>
+			<% if new_friends.include?(f) %>
+			<span>
+				<td>
+					<% link_to "Drop Friend?", friend_drop_path ({id: f.id}), method: :post %>  
+				</td>
+			</span>
+			<% else %>
+			 <span>
+			 	<td>
+			 		<% link_to "Add Friend?", friend_add_path ({id: f.id}), method: :post %> 
+			 	</td>
+			 </span>
+			 <% end %><!--  end if -->
+			</tr>
+		<% end %><!--  end do -->
+	</table>
+<br>
+<br>
+<!-- navigation tabs -->
+</div><!--  close child_clr
+

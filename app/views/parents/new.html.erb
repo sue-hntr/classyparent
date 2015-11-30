@@ -1,22 +1,25 @@
 <!-- parent.new.html.erb -->
+<div class='parent_clr'>
 <br>
-<h1>Our Family Info form</h1>
+<h1>Family Info</h1>
 <br>
-
-   <%= form_for @parent do |f| %>
-
-      <%= f.label :Parent_First_Name %> <%= f.text_field :fname %><br>
-      <%= f.label :Parent_Last_Name %> <%= f.text_field :lname %><br>
-      <%= f.label :Parent_Email %> <%= f.text_field :email %><br>
-      <%= f.label :Parent_Mobilephone %> <%= f.text_field :cellphone %><br>
-      <%= f.label :Parent_AddressLine1 %> <%= f.text_field :address1 %><br>
-      <%= f.label :AddressLine2 %> <%= f.text_field :address2 %><br>
-      <%= f.label :City %> <%= f.text_field :city %><br>
-      <%= f.label :State %> <%= f.text_field :state %><br>
-      <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-      <%= f.label :PASSWORD %><%= f.text_field :password %>
-      <%= f.submit "create" %>
+<div class="belly_div">
+<br>
+   <%= simple_form_for @parent do |f| %>
+      <%= f.input :fname, label: false, placeholder: 'Your first name (parent)' %>
+      <%= f.input :lname, label: false, placeholder: 'Last name (parent)'%>
+      <%= f.input :email, label: false, placeholder: 'Email: name@domain.com'%>
+      <%= f.input :cellphone, label: false, placeholder: 'Your Cellphone' %>
+      <%= f.input :address1, label: false, placeholder: 'Street Address'%>
+      <%= f.input :address2, label: false, placeholder: 'Street Address line 2'%>
+      <%= f.input :city, label: false, placeholder: 'City' %>
+      <%= f.input :state, label: false, placeholder: 'State' %>
+      <%= f.input :zipcode, label: false, placeholder: 'Zipcode' %>
+      <%= f.input :password, label: false, placeholder: 'Password' %>
+      <%= f.button :submit, "Save Info", class: "my-button" %>
     <% end %>
+</div><!--  close belly_div -->
 <br>
 <br>
 <%= link_to "Log In", login_path %>
+</div><!--  close parent_clr -->

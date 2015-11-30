@@ -1,29 +1,31 @@
 <!-- child.show.html.erb -->
+<div class="child_clr">
 <br>
 <h1>Child Interest Info</h1>
+<div class="belly_div">
+<u>Full Name</u>:&nbsp<%= "#{@child.fname} #{@child.lname}" %><br>
+<u>Nickname</u>:&nbsp<%= "#{@child.nickname}" %><br>
+<u>Child's Age in Years</u>:&nbsp<%= "#{@child.age_years}" %><br>
+<u>Child's Birthday Month</u>:&nbsp<%= "#{@child.bdaymonth}" %><br>
+<u>Elementary School</u>:&nbsp<%= "#{@child.hobbyteachone}" %><br>
+<u>Favorite Group Hobby</u>:&nbsp<%= "#{@child.hobbyteachtwo}" %><br>
+<u>Other Favoite Hobby</u>:&nbsp<%= "#{@child.hobbyteachthree}" %><br>
+</div><!--  close belly div -->
+<br>
+</div><!--  close child_clr -->
 <br>
 <br>
-<h3><%= "Full Name:  #{@child.fname} #{@child.lname}" %></h3>
 <br>
-<h3><%= "Nickname:  #{@child.nickname}" %></h3>
-<br>
-<h3><%= "ParentName:  #{@child.parent_name}" %></h3>
-<br>
-<%= "Elementary School:  #{@child.hobbyteachone}" %></h3>
-<br>
-<%= "Favorite Group Hobby:  #{@child.hobbyteachtwo}" %></h3>
-<br>
-<%= "Other Favoite Hobby:  #{@child.hobbyteachthree}" %></h3>
+<%= link_to "Edit your child's info", edit_child_path(@child.id) %>
 <br>
 <br>
-<%= "Other Favoite Hobby:  #{@child.hobbyteachfour}" %></h3>
-<br>
-
-<br>
-
-<%= link_to "Add more parents", new_parent_path %>
+<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
 <br>
 <br>
-<%= link_to "Add Kids", new_child_path %>
+<!-- FIX THIS LINK TO SEND INFO ALONG -->
+<%= link_to "Add Your Child's School and Activity Details", new_school_hobby_path %> 
+<br>
+<br>
+<%= link_to "Look at a list of friends and potential playmates", children_path %>
 
 

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106194226) do
+ActiveRecord::Schema.define(version: 20151129050244) do
 
   create_table "child_attendances", force: :cascade do |t|
     t.integer  "child_id"
-    t.integer  "school_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "school_hobby_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "children", force: :cascade do |t|
@@ -26,18 +26,13 @@ ActiveRecord::Schema.define(version: 20151106194226) do
     t.string   "nickname"
     t.string   "parent_name"
     t.integer  "parent_id"
-    t.text     "family_info"
-    t.text     "bdaymonth"
-    t.boolean  "bdaywkone"
-    t.boolean  "bdaywktwo"
-    t.boolean  "bdaywkthree"
-    t.boolean  "bdaywkfour"
+    t.string   "family_info"
+    t.string   "age_years"
+    t.string   "bdaymonth"
     t.string   "hobbyteachone"
     t.string   "hobbyteachtwo"
     t.string   "hobbyteachthree"
     t.string   "hobbyteachfour"
-    t.float    "old_latitude"
-    t.float    "old_longitude"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -79,6 +74,7 @@ ActiveRecord::Schema.define(version: 20151106194226) do
   create_table "school_hobbies", force: :cascade do |t|
     t.string   "teachername"
     t.string   "class_name"
+    t.boolean  "is_public_school"
     t.string   "grade"
     t.string   "teacher_email"
     t.string   "teacher_cell"

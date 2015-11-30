@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+/*@import 'fontish'; */
+$cp-pink: #C71585;
+$cp-yellow: #ACE600;
+$cp-blue: #333399;
+.navbar{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	float: left;
+	height: 80px;
+	background-color: $cp-blue;
+	width: 100%;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 2em;
+	color: white;
+}
+/* Small devices (tablets, 768px and up)
+@media (min-width: @screen-sm-min) { ... }
+
+/* Medium devices (desktops, 992px and up) */
+/*@media (min-width: @screen-md-min) { ... }
+*/
+/* Large devices (large desktops, 1200px and up) */
+/*@media (min-width: @screen-lg-min) { ... }*/ 

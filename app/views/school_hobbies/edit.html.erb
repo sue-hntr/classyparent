@@ -1,0 +1,29 @@
+<!-- school.edit.html.erb -->
+<div class="school_clr">
+<br>
+<h1>School, Class or Team info</h1>
+<br>
+<h1>School, Class or Team info</h1>
+<br>
+   <%= simple_form_for @school do |f| %>
+      <%= f.input :teachername, label: false %><br>
+      <%= f.input :class_name, label: false %><br>
+      <%= f.input :grade, label: false, %><br>
+      <%= f.input :teacher_email, label: false %><br>
+      <%= f.input :teacher_cell, label: false %><br>
+      <%= f.input :schoolname, label: false %><br>
+      <%= f.input :school_email, label: false %><br>
+      <%= f.input :school_url, label: false %><br>
+      <%= f.input :school_phone, label: false %><br>
+      <%= f.input :address1, label: false %><br>
+      <%= f.input :address2, label: false %><br>
+      <%= f.input :city, label: false %><br>
+      <%= f.input :state, label: false %><br>
+      <%= f.input :zipcode, label: false %>
+      <br>
+      <%= f.button :submit, "Update School, Class or Playground Info", class: "my-button" %>
+    <% end %>
+<br>
+<br>
+</div><!--  close school_clr -->
+<%= link_to "Log In", login_path %>

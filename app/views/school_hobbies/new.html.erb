@@ -1,42 +1,38 @@
 <!-- school.new.html.erb -->
+<div class="school_clr">
 <br>
 <h1>School, Class or Team info</h1>
 <br>
-   <%= form_for @school do |f| %>
-
-      <%= f.label :TeacherName %> <%= f.text_field :teachername %><br>
-
-      <%= f.label :ClassorTeamName %> <%= f.text_field :class_name %><br>
-
-      <%= f.label :Grade %> <%= f.text_field :grade %><br>
-
-      <%= f.label :Teacher_Email %> <%= f.text_field :teacher_email %><br>
-
-      <%= f.label :Teacher_Cell %> <%= f.text_field :teacher_cell %><br>
-
-      <%= f.label :SchoolName %> <%= f.text_field :schoolname %><br>
-
-      <%= f.label :School_Email %> <%= f.text_field :school_email %><br>
-
-      <%= f.label :School_Website %> <%= f.text_field :school_url %><br>
-
-      <%= f.label :School_Phone %> <%= f.text_field :school_phone %><br>
-      
-      <%= f.label :Emergency_Contact_Name %> <%= f.text_field :emergency_contactname %><br>
-
-      <%= f.label :Emergency_Contact_Phone %> <%= f.text_field :emergency_contactphone %><br>
-
-      <%= f.label :School_Address1 %> <%= f.text_field :address1 %><br>
-
-      <%= f.label :School_Address2 %> <%= f.text_field :address2 %><br>
-
-      <%= f.label :City %> <%= f.text_field :city %><br>
-
-      <%= f.label :State %> <%= f.text_field :state %><br>
-
-      <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-      <%= f.submit "create" %>
-    <% end %>
+<h4>Most of these fields are optional except the school name, address information and the question, "Is this an elementary school? information".
 <br>
+Entering the address location of the activity will allow the school to appear on a future feature, a map of all the schools and activities listed in the system.
 <br>
+As for the public schools, children that are the same age and attend the same elementary school are great sources of future playdates. Please check out our list of public schools with classyparent children your child's age.</h4>
+<br>
+      <div class="belly_div">
+               <%= simple_form_for @school do |f| %>
+                  <%= f.input :schoolname, label: false, placeholder: "School, Activity or Playground Name" %><br>
+                  <%= f.input :teachername, label: false, placeholder: "Teacher's Name" %><br>
+                  <%= f.input :class_name, label: false, placeholder: "Class Name" %><br>
+                  <%= f.input :is_public_school, label: "Select if this your child's Elementary School" %><br>    
+                  <%= f.input :grade, label: false, placeholder: "Grade Level" %><br>
+                  <%= f.input :teacher_email, label: false, placeholder: "Teacher Email" %><br>
+                  <%= f.input :teacher_cell, label: false, placeholder: "Teacher Contact Phone" %><br>
+                  <%= f.input :school_email, label: false, placeholder: "School Email" %><br>
+                  <%= f.input :school_url, label: false, placeholder: "School or Playground Website" %><br>
+                  <%= f.input :school_phone, label: false, placeholder: "School Playground Admin Phone" %><br>
+                  <%= f.input :emergency_contactname, label: false, placeholder: "Child's Emergency Contact Name" %><br>
+                  <%= f.input :emergency_contactphone, label: false, placeholder: "Child's Emergency Contact Phone Number" %><br>
+                  <%= f.input :address1, label: false, placeholder: "School or Playground Location Address" %><br>
+                  <%= f.input :address2, label: false, placeholder: "Address Line 2" %><br>
+                  <%= f.input :city, label: false, placeholder: "City" %><br>
+                  <%= f.input :state, label: false, placeholder: "State Abbreviation" %><br>
+                  <%= f.input :zipcode, label: false, placeholder: "Zipcode" %>
+            <br>
+            <%= f.button :submit, "Add School, Class or Playground Info", class: "my-button" %>
+          <% end %>
+      <br>
+      </div><!--  close belly_div -->
+<br>
+</div><!--  close school-clr -->
 <%= link_to "Log In", login_path %>

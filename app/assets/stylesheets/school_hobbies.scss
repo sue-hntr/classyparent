@@ -1,3 +1,20 @@
-// Place all the styles related to the school_hobbies controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$cp-pink: #C71585;
+$cp-yellow: #ACE600;
+$cp-blue: #333399;
+
+.school_clr{
+	background-color: $cp-blue;
+	h1{
+		color: white;
+		font-family: "Verdana", sans-serif;
+	}
+	h2{
+		color: white;
+		font-family: "Verdana", sans-serif;
+	}
+	h3{
+		color: white;
+		font-family: "Verdana", sans-serif;
+	}
+
+}

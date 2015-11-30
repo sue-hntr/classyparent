@@ -1,32 +1,75 @@
 <!-- parent.show.html.erb -->
-<br>
-<h1>Confirm Your Contact Info</h1>
-<br>
-<br>
-<h3><%= "Full Name:  #{@parent.fname} #{@parent.lname}" %></h3>
-<br>
-<h3><%= "Email:  #{@parent.email}" %></h3>
-<br>
-<h3><%= "Cellphone:  #{@parent.cellphone}" %></h3>
-<br>
-<%= "Street Address:  #{@parent.address1}, #{@parent.address2}" %></h3>
-<br>
-<%= "City, State, Zip:  #{@parent.city}, #{@parent.state}, #{@parent.zipcode}" %></h3>
-<br>
-<%= "Password:  #{@parent.password}" %></h3>
-<br>
-<br>
-<br>
-<%= link_to "EDIT your information ", edit_parent_path(@parent.id) %>
+<div class='parent_clr'>
+	<br>
+	<h1>Confirm Your Family Contact Info</h1>
+	<div class="belly_div">
+	<u>Full Name</u>:&nbsp<%= "#{@parent.fname} #{@parent.lname}" %><br>
+	<u>Email</u>:&nbsp<%= "#{@parent.email}" %><br>
+	<u>Cellphone</u>:&nbsp<%= "#{@parent.cellphone}" %><br>
+	<u>Street Address</u>:&nbsp<%= "#{@parent.address1} #{@parent.address2}" %><br>
+	<u>City, State, Zip</u>:&nbsp<%= "#{@parent.city}, #{@parent.state}, #{@parent.zipcode}" %><br>
+	<u>Password</u>:&nbsp<%= "#{@parent.password}" %>
 
-<%= link_to "Add more parents", new_parent_path %>
+	</div> <!--  close belly_div -->
+	<br>
+<!-- ###### BEGIN CHILD PORTION OF PAGE ###### -->
+<br>
+<h1> Children in your family account</h1>
+
+<div class="kid_belly_div">
+<!-- ##### if @parent.children != nil show list of @parent.children ###### -->
+<table border="0" style="width:100%">
+						 <tr>    
+						   	<td><u>Child's Name</u></td>
+						    <td><u>Child's Age</u></td>
+						    <td><u>Child's School</u></td>
+						    <td><u>See Child's Info</u></td>
+						  </tr>
+					 <% @child.each do |w| %>
+						 <% if @child == nil %>
+								<tr>
+						  			<td>
+						  				<span>
+						  					No children listed.
+						  				</span>
+						  			</td>
+						  			<td>
+						  				<span>
+						  					&nbsp
+						  				</span>
+						  			</td>
+						  			<td>
+						  				<span>
+						  					Add children below
+						  				</span>			
+						  			</td>
+						  		</tr>
+						 <% else %>
+						  	<tr>	
+								<td><%= w.fname %></td>
+								<td><%= w.age_years %></td>
+								<td><%= w.hobbyteachone %></td>
+								<td><%= link_to "see child's page", child_path(w.id) %>	
+							</tr>
+						 <% end %> <!-- end if -->
+						 <% end %><!--  end do -->
+						</table>
+					</div> <!-- end belly_div -->
+
 <br>
 <br>
-<%= link_to "Add Kids", new_child_path %>
+</div><!-- ###### END CHILD PORTION OF PAGE ###### -->
+<%= link_to "EDIT your Family information ", edit_parent_path(@parent.id) %>
 <br>
 <br>
 <%= link_to "Log Out", logout_path, method: :delete %>
 <br>
 <br>
-<%= link_to "MAP", parents_path %>
+<%= link_to "I have a kid to add to my account", new_child_path(@parent.id) %>
+<br>
+<br>
+<%= link_to "See a map of Classyparent homes in your area", parents_path %>
+<br>
+<br>
+<%= link_to "See a List of other Classyparents and their kids in your area", allparents_parents_path %>
 
