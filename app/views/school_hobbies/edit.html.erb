@@ -1,41 +1,29 @@
 <!-- school.edit.html.erb -->
+<div class="school_clr">
 <br>
 <h1>School, Class or Team info</h1>
 <br>
-   <%= form_for @school do |f| %>
-
-      <%= f.label :TeacherName %> <%= f.text_field :teachername %><br>
-
-      <%= f.label :Class_or_Team_Name %> <%= f.text_field :class_name %><br>
-
-      <%= f.label :Is_it_an_ElementarySchool %> <%= f.text_field :is_public_school %><br>
-
-      <%= f.label :Grade %> <%= f.text_field :grade %><br>
-
-      <%= f.label :Teacher_Email %> <%= f.text_field :teacher_email %><br>
-
-      <%= f.label :Teacher_Cell %> <%= f.text_field :teacher_cell %><br>
-
-      <%= f.label :SchoolName %> <%= f.text_field :schoolname %><br>
-
-      <%= f.label :School_Email %> <%= f.text_field :school_email %><br>
-
-      <%= f.label :School_Website %> <%= f.text_field :school_url %><br>
-
-      <%= f.label :School_Phone %> <%= f.text_field :school_phone %><br>
-      
-      <%= f.label :Emergency_Contact_Name %> <%= f.text_field :emergency_contactname %><br>
-
-      <%= f.label :Emergency_Contact_Phone %> <%= f.text_field :emergency_contactphone %><br>
-
-      <%= f.label :School_Address1 %> <%= f.text_field :address1 %><br>
-
-      <%= f.label :School_Address2 %> <%= f.text_field :address2 %><br>
-
-      <%= f.label :City %> <%= f.text_field :city %><br>
-
-      <%= f.label :State %> <%= f.text_field :state %><br>
-
-      <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-      <%= f.submit "update" %>
+<h1>School, Class or Team info</h1>
+<br>
+   <%= simple_form_for @school do |f| %>
+      <%= f.input :teachername, label: false %><br>
+      <%= f.input :class_name, label: false %><br>
+      <%= f.input :grade, label: false, %><br>
+      <%= f.input :teacher_email, label: false %><br>
+      <%= f.input :teacher_cell, label: false %><br>
+      <%= f.input :schoolname, label: false %><br>
+      <%= f.input :school_email, label: false %><br>
+      <%= f.input :school_url, label: false %><br>
+      <%= f.input :school_phone, label: false %><br>
+      <%= f.input :address1, label: false %><br>
+      <%= f.input :address2, label: false %><br>
+      <%= f.input :city, label: false %><br>
+      <%= f.input :state, label: false %><br>
+      <%= f.input :zipcode, label: false %>
+      <br>
+      <%= f.button :submit, "Update School, Class or Playground Info", class: "my-button" %>
     <% end %>
+<br>
+<br>
+</div><!--  close school_clr -->
+<%= link_to "Log In", login_path %>

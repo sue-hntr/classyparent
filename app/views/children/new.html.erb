@@ -1,26 +1,28 @@
 <!-- children.new.html.erb -->
+<div class="child_clr">
 <br>
 <h1>Child Info form</h1>
 <br>
-   <%= form_for @child do |f| %>
+<div class="belly_div">
+   <%= simple_form_for @child do |f| %>
+      <%= f.input :fname, label: false, placeholder: "Child's first name" %> 
+      <%= f.input :lname, label: false, placeholder: "Child's last name" %>
+      <%= f.input :nickname, label: false, placeholder: "Child's nickname" %>
+      <%= f.input :age_years, label: false, placeholder: "Child's age in years" %>
+      <%= f.input :bdaymonth, label: false, placeholder: "Child's Birthday Month" %>
+      <%= f.input :hobbyteachone, label: false, placeholder: "Elementary School"%>
+      <%= f.input :hobbyteachtwo, label: false, placeholder: "sports team or religious school" %>
+      <%= f.input :hobbyteachthree, label: false, placeholder: "Hobby or Class" %>
+      <br>
+      <%= f.button :submit, "Add Child's Info", class: "my-button" %>
+      <br>
+      <br>
 
-      <%= f.label :FirstName %> <%= f.text_field :fname %><br>
-
-      <%= f.label :LastName %> <%= f.text_field :lname %><br>
-
-      <%= f.label :nickname %> <%= f.text_field :nickname %><br>
-
-      <%= f.label :ParentName %> <%= f.text_field :parent_name %><br>
-
-      <%= f.label :Public_School %> <%= f.text_field :hobbyteachone %><br>
-
-      <%= f.label :Favorite_Group_Hobby %> <%= f.text_field :hobbyteachtwo %><br>
-
-      <%= f.label :Hobby_Class2 %> <%= f.text_field :hobbyteachthree %><br>
-
-      <%= f.label :Hobby_Class3 %> <%= f.text_field :hobbyteachfour %><br>
-      <%= f.submit "create" %>
     <% end %>
+ <br>
+</div><!--  close belly_div -->
+<br>
+</div><!--  close child_clr -->
+<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
 <br>
 <br>
-<%= link_to "Log In", login_path %>

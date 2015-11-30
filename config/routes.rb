@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  root 'parents#new'
+  root 'parents#start'
 
-    get  'members' => 'parents#members', as: :family_member
+    get  'start' => 'parents#start', as: :start_parent
+    get 'allparents' => "parents#allparent", as: :allparents_parents
 
+    post 'addfriend' => 'children#addfriend', as: :friend_add
+    post 'dropfriend' =>'children#dropfriend', as: :friend_drop
+
+    post 'addschool' => "school_hobbies#addschool", as: :school_add
+    post 'removeschool' => "school_hobbies#dropschool", as: :school_drop
 
     get  'login' => 'sessions#new', as: :login
     post   'login' => 'sessions#create'

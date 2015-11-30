@@ -8,6 +8,13 @@ class Parent < ActiveRecord::Base
 	#validations	
 	validates :email, presence: true, uniqueness: true
 	validates :password, presence: true, uniqueness: true
+	validates :fname, presence: true
+	validates :lname, presence: true
+	validates_format_of :cellphone, :with => /\A(\d{10}|\(?\d{3}\)?[-. ]\d{3}[-.]\d{4})\z/
+	validates :address1, presence: true
+	validates :city, presence: true
+	validates :state, presence: true
+	validates :zipcode, length: { minimum: 5 }
 
 	
 	#callbacks

@@ -1,26 +1,33 @@
 <!-- parent.edit.html.erb -->
+<div class="parent_clr">
 <br>
-<h3>Edit Your Account Info</h3>
-<%= form_for @parent do |f|%>
-      <%= f.label :Parent_First_Name %> <%= f.text_field :fname %><br>
-      <%= f.label :Parent_Last_Name %> <%= f.text_field :lname %><br>
-      <%= f.label :Parent_Email %> <%= f.text_field :email %><br>
-      <%= f.label :Parent_Mobilephone %> <%= f.text_field :cellphone %><br>
-      <%= f.label :AddressLine1 %> <%= f.text_field :address1 %><br>
-      <%= f.label :AddressLine2 %> <%= f.text_field :address2 %><br>
-      <%= f.label :City %> <%= f.text_field :city %><br>
-      <%= f.label :State %> <%= f.text_field :state %><br>
-      <%= f.label :Zipcode %> <%= f.text_field :zipcode %><br>
-      <%= f.label :PASSWORD %><%= f.text_field :password %>
-	<%= f.submit %>
-	<% end %>
+<h1>Edit Your Account Info</h1>
+<div class="belly_div">
+   <%= simple_form_for @parent do |f| %>
+      <%= f.input :fname, label: false %>
+      <%= f.input :lname, label: false %>
+      <%= f.input :email, label: false %>
+      <%= f.input :cellphone, label: false %>
+      <%= f.input :address1, label: false %>
+      <%= f.input :address2, label: false, placeholder: "2nd line of Street Address" %>
+      <%= f.input :city, label: false %>
+      <%= f.input :state, label: false %>
+      <%= f.input :zipcode, label: false %>
+      <%= f.input :password, label: false %>
+      <%= f.button :submit, "Update Info", class: "my-button" %>
+    <% end %>
+
+  </div><!--  Close belly div -->
+  <br>
+    <br>
+    <br>
+</div><!--  close parent_clr -->
 <br>
 <br>
-<%= link_to "Add more parents", new_parent_path %>
 <br>
 <br>
-<%= link_to "Add Kids", new_child_path %>
-<br>
+<%= link_to "See Your family account", parent_path(@parent.id) %>
 <br>
 <%= link_to "Log Out", logout_path, method: :delete %>
+<br>
 

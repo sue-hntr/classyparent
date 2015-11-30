@@ -1,11 +1,64 @@
-// Place all the styles related to the Parents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-$cp-magenta: #C71585;
-$cp-yellow: #BFFF00;
+$cp-pink: #C71585;
+$cp-yellow: #ACE600;
 $cp-blue: #333399;
+$cp_belly_text: #737373;
+$cp_kid_belly_back: #CCFF33;
 
-body {
-     background-color:$default-blue;
+.parent_clr{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-color: $cp-pink;
+	padding-left: 5px;
+	h1{
+		color: white;
+		font-family: "Trebuchet MS", sans-serif;
+			}
+	h3{
+		color: $cp_belly_text;
+		font-family: "Verdana", sans-serif;
+	}
+	h4{
+		color: white;
+		font-family: "Verdana", sans-serif;
+	}
+
+}/* close parent_clr*/
+.belly_div{
+	width: 85%;
+	position: relative;
+	top: 50%;
+	left: 5%;
+	border: 2px solid $cp_belly_text;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: white;
+	color: $cp_belly_text;
+	font-family: "Verdana", sans-serif;
+	font-size: em;
+}
+.kid_belly_div{
+	width: 85%;
+	position: relative;
+	top: 50%;
+	left: 5%;
+	border: 2px solid $cp_belly_text;
+	padding: 10px;
+	border-radius: 10px;
+	background-color: $cp_kid_belly_back;
+	color: $cp_belly_text;
+	font-family: "Verdana", sans-serif;
+	font-size: em;
+}
+
+
+
+
+.yellow_e_div{
+	background-color: $cp-yellow;
+}
+.blue_e_div{
+	background-color: $cp-blue;
+}
+.pink_e_div{
+	background-color: $cp-pink;
 }

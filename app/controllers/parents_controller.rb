@@ -8,12 +8,11 @@ class ParentsController < ApplicationController
 	# 	end
 	# end
 
-	def family
-		@parent = parent_user
-		@child = @parent.children
+# this is the landing page for the app
+	def start
 	end
 
-
+#this shows a map of all parents addresses.
 	def index
 		@parent = parent_user
 		gon.geo_parent = @parent
@@ -23,7 +22,13 @@ class ParentsController < ApplicationController
   					marker.lng parent.longitude
   		end
 	end
-	
+#this shows a list of all classyparents and their kids.
+	def allparent
+		@parent = parent_user
+		@all_parent = Parent.all
+		@parent_children = @parent.children
+	end
+
 	def new
 		@parent = Parent.new
 	end
@@ -55,6 +60,7 @@ class ParentsController < ApplicationController
 
 	def show
 		@parent = parent_user
+		@child = @parent.children
 	end
 
 	private

@@ -1,20 +1,28 @@
 /*
-Error: Undefined variable: "$default-blue".
-        on line 10 of stylesheets/parents.scss
+Error: Undefined mixin 'fontish'.
+        on line 11 of stylesheets/main.scss, in `fontish'
+        from line 11 of stylesheets/main.scss
 
-5: $cp-magenta: #C71585;
-6: $cp-yellow: #BFFF00;
-7: $cp-blue: #333399;
-8: 
-9: body {
-10:      background-color:$default-blue;
-11: }
+6: 	padding-top: 10px;
+7: 	float: left;
+8: }*\/
+9: 
+10: p{
+11: 	@include fontish(2);
+12: }
+13: 
+14: footer{
+15: 	@include fontish(1);
+16: }
 
 Backtrace:
-stylesheets/parents.scss:10
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/script/tree/node.rb:50:in `perform'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
+stylesheets/main.scss:11:in `fontish'
+stylesheets/main.scss:11
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:349:in `block in visit_mixin'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:98:in `block in with_mixin'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:98:in `with_mixin'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:347:in `visit_mixin'
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
@@ -51,19 +59,16 @@ stylesheets/parents.scss:10
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
 /Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:293:in `watch'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin.rb:108:in `method_missing'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:381:in `watch_or_update'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:51:in `process_result'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/bin/sass:23:in `load'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/bin/sass:23:in `<main>'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/bin/ruby_executable_hooks:15:in `eval'
-/Users/suzannehunter/.rvm/gems/ruby-2.2.3/bin/ruby_executable_hooks:15:in `<main>'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Users/suzannehunter/.rvm/gems/ruby-2.2.3/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$default-blue\".\A         on line 10 of stylesheets/parents.scss\A \A 5: $cp-magenta: #C71585;\A 6: $cp-yellow: #BFFF00;\A 7: $cp-blue: #333399;\A 8: \A 9: body {\A 10:      background-color:$default-blue;\A 11: }"; }
+  content: "Error: Undefined mixin 'fontish'.\A         on line 11 of stylesheets/main.scss, in `fontish'\A         from line 11 of stylesheets/main.scss\A \A 6: 	padding-top: 10px;\A 7: 	float: left;\A 8: }*/\A 9: \A 10: p{\A 11: 	@include fontish(2);\A 12: }\A 13: \A 14: footer{\A 15: 	@include fontish(1);\A 16: }"; }

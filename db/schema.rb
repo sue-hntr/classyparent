@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151106194226) do
+ActiveRecord::Schema.define(version: 20151129050244) do
 
   create_table "child_attendances", force: :cascade do |t|
     t.integer  "child_id"
@@ -26,18 +26,13 @@ ActiveRecord::Schema.define(version: 20151106194226) do
     t.string   "nickname"
     t.string   "parent_name"
     t.integer  "parent_id"
-    t.text     "family_info"
-    t.text     "bdaymonth"
-    t.boolean  "bdaywkone"
-    t.boolean  "bdaywktwo"
-    t.boolean  "bdaywkthree"
-    t.boolean  "bdaywkfour"
+    t.string   "family_info"
+    t.string   "age_years"
+    t.string   "bdaymonth"
     t.string   "hobbyteachone"
     t.string   "hobbyteachtwo"
     t.string   "hobbyteachthree"
     t.string   "hobbyteachfour"
-    t.float    "old_latitude"
-    t.float    "old_longitude"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

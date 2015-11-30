@@ -1,33 +1,32 @@
 <!-- child.edit.html.erb -->
+<div class="child_clr">
 <br>
-<h3>Edit Your Child's Account Info</h3>
-<h1>Child Info form</h1>
-<br>
-   <%= form_for @child do |f| %>
-
-      <%= f.label :FirstName %> <%= f.text_field :fname %><br>
-
-      <%= f.label :LastName %> <%= f.text_field :lname %><br>
-
-      <%= f.label :nickname %> <%= f.text_field :nickname %><br>
-
-      <%= f.label :ParentName %> <%= f.text_field :parent_name %><br>
-
-      <%= f.label :Public_School %> <%= f.text_field :hobbyteachone %><br>
-
-      <%= f.label :Favorite_Group_Hobby %> <%= f.text_field :hobbyteachtwo %><br>
-
-      <%= f.label :Hobby_Class2 %> <%= f.text_field :hobbyteachthree %><br>
-
-      <%= f.label :Hobby_Class3 %> <%= f.text_field :hobbyteachfour %><br>
-      <%= f.submit "update" %>
-    <% end %>
+<h1>Edit Your Child's Info</h1>
+  <div class="belly_div">
+  <br>
+     <%= simple_form_for @child do |f| %>
+        <%= f.input :fname, label: false %> 
+        <%= f.input :lname, label: false %>
+        <%= f.input :nickname, label: false %>
+        <%= f.input :age_years, label: false, placeholder: "Child's age" %>
+        <%= f.input :bdaymonth, label: false, placeholder: "Child's Birthday Month" %>
+        <%= f.input :hobbyteachone, label: false %>
+        <%= f.input :hobbyteachtwo, label: false, placeholder: "Sports Team or Relgious School"  %>
+        <%= f.input :hobbyteachthree, label: false, placeholder: "Favorite Social Hobby" %>
+        <br>
+       <%= f.button :submit, "Update Child's Info", class: "my-button" %>
+      <% end %>
+   <br>
+  </div><!--  close belly_div -->
+</div><!--  close child_clr -->
 <br>
 <br>
-<%= link_to "Add more parents", new_parent_path %>
+<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
 <br>
-<%= link_to "Add More Kids", new_child_path %>
 <br>
-<%= link_to "Log Out", logout_path, method: :delete %>
+<%= link_to "Add Your Child's School and Activity Details", new_school_hobby_path %> 
+<br>
+<br>
+<%= link_to "Look at a list of friends and potential playmates", children_path %>
 
 
