@@ -1,19 +1,16 @@
 class SchoolHobbiesController < ApplicationController
-#note: put the def parent_user in applications_controller
+#note: put the def parent_user and current_child in applications_controller
 
 #reference only
- 	def parent_user
-		if session[:user_id]
-			@current_parent = Parent.find(session[:user_id])
-		end
-	end
+ # 	def parent_user
+	# 	if session[:user_id]
+	# 		@current_parent = Parent.find(session[:user_id])
+	# 	end
+	# end
 
-	def current_child
-		if parent_user
-			@current_child = Family.where(parent_user[:id])
-		end
+	def current_child 
+			@current_child = Child.find(gon.child.id) 
 	end
-
 
 
 	def index
@@ -43,24 +40,29 @@ class SchoolHobbiesController < ApplicationController
 
 
 	def new
-		@parent = parent_user
-		@child = current_child
-		# current_child = Child.find(child_params[:id])
-		@parent_child = @parent.children
-		# @child = Child.find(@parent_child.id)
+		# @parent = parent_user
+		# @child = @current_child
+		# puts "AAAAAAAAAAA"
+		# puts @child
+		# puts "BBBBBBBBBBB"
+		# puts @current_child
+		# binding.pry
+		# @@y = @child.id
+		# @parent_child = @parent.children
 		@school = SchoolHobby.new
 		
 	end
 
-	def create   
-		@school_hobby = SchoolHobby.new(school_params)
-		@child = current_child
+	def create
 		@parent = parent_user
+
+		@child = Child.find(@@y)
+		@school_hobby = SchoolHobby.new(school_params)
    		if @school_hobby.save
-			@child.school_hobbies << @school_hobby
+   			@child.school_hobbies << @school_hobby
 			# @schoolhobbies.children << @child
 			flash[:alert] = "school info saved"
-			redirect_to school_path(@school.id)
+			redirect_to school_hobby_path(@school.id)
 		else
 			flash[:error] = @school.errors.full_messages.to_sentence
 			render :new
