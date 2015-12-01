@@ -9,11 +9,10 @@ class ChildrenController < ApplicationController
 	# 	end
 	# end
 
-	# def current_child
-	# 	if parent_user
-	# 		@current_child = Child.find(child_params[:id])
-	# 	end
-	# end
+	def current_child 
+		@current_child = Child.find(params[:id]) 
+	end
+
 
 
 #list of friends methods start
@@ -46,7 +45,7 @@ class ChildrenController < ApplicationController
 		
 	end
 
-	def create   
+	def create  
 		@child = Child.new(child_params) 
 		@parent = parent_user
 	if @child.save
@@ -57,19 +56,18 @@ class ChildrenController < ApplicationController
 			flash[:error] = @child.errors.full_messages.to_sentence
 			render :new
 		end	
-		@child = child_params
-	end
+		@@x = @child.id
+		end
 
 	def edit
 		@parent = parent_user
-		@child = Child.find(child_params[:id])
+		@child =  current_child   #Child.find(params[:id])
 	end
 
 	def update
 		@parent = parent_user
-		@child = Child.find(child_params[:id])		
+		@child = current_child
 		if 	@child.update(child_params)
-			flash[:alert] = "Your info is updated"
 			redirect_to child_path(@child.id)
 		else
 			flash[:alert] = "not good. try again" 
@@ -77,9 +75,15 @@ class ChildrenController < ApplicationController
 		end
 	end
 
-	def show
+	def show 
 		@parent = parent_user
-		@child = Child.find(params[:id])
+		@child = current_child
+		gon.child = @child
+		# puts "CCCCCCCCC"
+		# puts gon.child.id 
+		# binding.pry
+		# @current_child = @child
+		# puts @current_child.fname
 	end
 
 	private

@@ -9,10 +9,9 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
-	def current_child
-		if parent_user
-			@current_child = Child.find(child_params[:id])
-		end
-	end
+	# def current_child 
+	# 	@current_child = Child.find(params[:id]) 
+	# end
+
 
 end
