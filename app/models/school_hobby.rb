@@ -12,12 +12,12 @@ class SchoolHobby < ActiveRecord::Base
 	# validates :zipcode, length: { minimum: 5 }
 
 
-	#callbacks
-	geocoded_by :full_address
+	# #callbacks
+	# geocoded_by :full_address
 
-	after_validation :geocode
+	# after_validation :geocode
 
-	def full_address
-		"#{self.address1}, #{self.address2}, #{self.city}, #{self.state}, #{zipcode}"
-	end
+	# def full_address
+	# 	"#{self.address1}, #{self.address2}, #{self.city}, #{self.state}, #{zipcode}"
+	# end
 end

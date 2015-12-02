@@ -9,9 +9,14 @@ class ApplicationController < ActionController::Base
 		end
 	end
 
-	# def current_child 
-	# 	@current_child = Child.find(params[:id]) 
-	# end
+	def current_child 
+		# puts "CCCCCCCCChild Controller current_child"
+		# puts params[:child_id]
+		@current_child = Child.find(params[:child_id])
+		# puts "CCCCCCC@curent_child.idCCCCC"
+		# puts @current_child.id
+	end
+
 
 
 end

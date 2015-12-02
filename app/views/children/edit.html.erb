@@ -24,7 +24,7 @@
 <%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
 <br>
 <br>
-<%= link_to "Add Your Child's School and Activity Details", new_school_hobby_path %> 
+<%= link_to "Add Your Child's School and Activity Details", new_child_school_hobby_path(child_id: @child.id) %> 
 <br>
 <br>
 <%= link_to "Look at a list of friends and potential playmates", children_path %>

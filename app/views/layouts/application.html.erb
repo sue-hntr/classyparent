@@ -36,7 +36,19 @@
 <!-- ############### HEAD #################### -->
 <!-- ############### BODY #################### -->
 <body>
-<div class="navbar">classyparent</div>
+	<div class="navbar"><img src="/assets/classyparent.gif"><!--  logo -->
+		<div class="top_button_signup">
+			<br>
+			<%= link_to "Sign Up", new_parent_path %>
+		</div><!--  close top button signup -->
+		<div class="top_button_login">
+			<br>
+			<%= link_to "Log In", login_path %>
+		</div><!--  close top button login -->
+	</div><!--  close navbar -->
+
+
+
 
 <%= yield %>
 

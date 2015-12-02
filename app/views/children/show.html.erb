@@ -1,6 +1,5 @@
 <!-- child.show.html.erb -->
- <%= include_gon(:init => true) %>
-<!-- ####### GON CODE TAG from gem file ########## -->
+
 <div class="child_clr">
 <br>
 <h1>Child Interest Info</h1>
@@ -14,20 +13,17 @@
 <u>Other Favoite Hobby</u>:&nbsp<%= "#{@child.hobbyteachthree}" %><br>
 </div><!--  close belly div -->
 <br>
+<br>
+<br>
 </div><!--  close child_clr -->
+<div class="yellow_e_div">
+	<%= link_to "Edit your child's info", edit_child_path(@child.id) %>
+</div>
+<div class="pink_e_div">
+	<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
+</div>
+<div class="yellow_e_div">
+	<%= link_to "Add Your Child's School and Activity Details", new_child_school_hobby_path(child_id: @child.id) %> 
+</div>
 <br>
-<br>
-<br>
-<%= link_to "Edit your child's info", edit_child_path(@child.id) %>
-<br>
-<br>
-<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
-<br>
-<br>
-<!-- FIX THIS LINK TO SEND INFO ALONG -->
-<%= link_to "Add Your Child's School and Activity Details", new_school_hobby_path %> 
-<br>
-<br>
-<%= link_to "Look at a list of friends and potential playmates", children_path %>
-
 
