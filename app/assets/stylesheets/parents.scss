@@ -54,11 +54,33 @@ $cp_kid_belly_back: #CCFF33;
 
 
 .yellow_e_div{
-	background-color: $cp-yellow;
+		height: 30px;
+		width:	100%;
+		text-align: center;
+		background-color: $cp-yellow;
+		font-family: "Trebuchet MS", sans-serif;
+		color: white;
+		font-size: 1.1em;
+		border: 1px solid white;
+		border-radius: 2px;
+		margin: 5px;
+		float: left;
+		background-color: $cp-yellow;
 }
 .blue_e_div{
 	background-color: $cp-blue;
 }
 .pink_e_div{
-	background-color: $cp-pink;
+		height: 30px;
+		width:	100%;
+		text-align: center;
+		background-color: $cp-yellow;
+		font-family: "Trebuchet MS", sans-serif;
+		color: white;
+		font-size: 1.1em;
+		border: 1px solid white;
+		border-radius: 2px;
+		margin: 5px;
+		float: left;
+		background-color: $cp-pink;
 }

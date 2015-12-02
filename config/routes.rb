@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     post 'addschool' => "school_hobbies#addschool", as: :school_add
     post 'removeschool' => "school_hobbies#dropschool", as: :school_drop
 
+    post 'keepchild' => "school_hobbies#keepchild", as: :school_keepchild
+
+
     get  'login' => 'sessions#new', as: :login
     post   'login' => 'sessions#create'
     delete 'logout' => 'sessions#destroy'
@@ -17,9 +20,12 @@ Rails.application.routes.draw do
 
   # devise_for :models
 
-  resources :parents, :children, :school_hobbies
+  resources :parents
+  resources :children do
+    resources :school_hobbies
+  end
 
-#join tables below
+#join tables below (take out to test if improve School_hobbies_controller)
   resources :child_attendances, :families, :friendships
 
 

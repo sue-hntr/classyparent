@@ -49,7 +49,7 @@
 								<td><%= w.fname %></td>
 								<td><%= w.age_years %></td>
 								<td><%= w.hobbyteachone %></td>
-								<td><%= link_to "see child's page", child_path(w.id) %>	
+								<td><%= link_to "see child's page", child_path(id: w.id) %>	
 							</tr>
 						 <% end %> <!-- end if -->
 						 <% end %><!--  end do -->
@@ -59,17 +59,18 @@
 <br>
 <br>
 </div><!-- ###### END CHILD PORTION OF PAGE ###### -->
-<%= link_to "EDIT your Family information ", edit_parent_path(@parent.id) %>
-<br>
-<br>
-<%= link_to "Log Out", logout_path, method: :delete %>
-<br>
-<br>
-<%= link_to "I have a kid to add to my account", new_child_path(@parent.id) %>
-<br>
-<br>
-<%= link_to "See a map of Classyparent homes in your area", parents_path %>
-<br>
-<br>
-<%= link_to "See a List of other Classyparents and their kids in your area", allparents_parents_path %>
+<div class="yellow_e_div">
+	<%= link_to "I have a kid to add to my account", new_child_path(@parent.id) %>
+</div>
+<div class="yellow_e_div">
+	<%= link_to "EDIT your Family information ", edit_parent_path(@parent.id) %>
+</div>	
+<div class="pink_e_div">
+	<%= link_to "Log Out", logout_path, method: :delete %>
+</div>
+<div class="yellow_e_div">
+	<%= link_to "See a map of Classyparent homes in your area", parents_path %>
+</div>
+
+
 

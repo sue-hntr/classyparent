@@ -1,16 +1,20 @@
 <!-- school.new.html.erb -->
+ <%= include_gon(:init => true) %>
 <div class="school_clr">
 <br>
 <h1>School, Class or Team info</h1>
+<div class="read_text"><h4>
+Most of these fields are optional <u>except</u> the school name, address information and the question, "Is this an elementary school? information".
 <br>
-<h4>Most of these fields are optional except the school name, address information and the question, "Is this an elementary school? information".
 <br>
 Entering the address location of the activity will allow the school to appear on a future feature, a map of all the schools and activities listed in the system.
 <br>
-As for the public schools, children that are the same age and attend the same elementary school are great sources of future playdates. Please check out our list of public schools with classyparent children your child's age.</h4>
+<br>
+As for the public schools, children that are the same age and attend the same elementary school are great sources of future playdates. Please check out our list of public schools with classyparent children your child's age. </h4></div><!--  close read_text -->
 <br>
       <div class="belly_div">
-               <%= simple_form_for @school do |f| %>
+
+               <%= simple_form_for @school, url: {action: "create"}  do |f| %>
                   <%= f.input :schoolname, label: false, placeholder: "School, Activity or Playground Name" %><br>
                   <%= f.input :teachername, label: false, placeholder: "Teacher's Name" %><br>
                   <%= f.input :class_name, label: false, placeholder: "Class Name" %><br>
@@ -35,4 +39,3 @@ As for the public schools, children that are the same age and attend the same el
       </div><!--  close belly_div -->
 <br>
 </div><!--  close school-clr -->
-<%= link_to "Log In", login_path %>

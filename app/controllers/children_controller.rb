@@ -9,11 +9,6 @@ class ChildrenController < ApplicationController
 	# 	end
 	# end
 
-	def current_child 
-		@current_child = Child.find(params[:id]) 
-	end
-
-
 
 #list of friends methods start
 	def index
@@ -42,7 +37,6 @@ class ChildrenController < ApplicationController
 	def new
 		@parent = parent_user
 		@child = Child.new
-		
 	end
 
 	def create  
@@ -56,17 +50,30 @@ class ChildrenController < ApplicationController
 			flash[:error] = @child.errors.full_messages.to_sentence
 			render :new
 		end	
-		@@x = @child.id
-		end
+	end
 
 	def edit
 		@parent = parent_user
-		@child =  current_child   #Child.find(params[:id])
+		@child =  Child.find(params[:id])
+		@current_child = @child
+		puts "DDDDDDD"
+		puts @current_child.id
+		#binding.pry
 	end
 
 	def update
 		@parent = parent_user
-		@child = current_child
+		aa = Child.find(params[:id])
+		puts "DDDDDDD"
+		puts aa
+		puts "EEEEEEEE"
+		puts @current_child
+		puts "FFFFFFFFF"
+		puts current_child
+		puts "GGGGGGGGGG"
+		puts current_child.id
+		puts "HHHHHHHHHH"
+		@child = current_child #FINAL
 		if 	@child.update(child_params)
 			redirect_to child_path(@child.id)
 		else
@@ -77,13 +84,15 @@ class ChildrenController < ApplicationController
 
 	def show 
 		@parent = parent_user
-		@child = current_child
-		gon.child = @child
-		# puts "CCCCCCCCC"
-		# puts gon.child.id 
-		# binding.pry
-		# @current_child = @child
-		# puts @current_child.fname
+		puts "XXXXXX"
+		puts params
+		puts "YYYYYYY"
+		puts params[:id]
+		@child = Child.find(params[:id])
+		@current_child = @child
+		puts "ZZZZZZ"
+		puts @current_child.id
+		#binding.pry
 	end
 
 	private
