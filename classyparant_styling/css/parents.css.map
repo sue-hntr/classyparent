@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAQA,IAAK;EACA,gBAAgB,EALR,OAAO",
+"sources": ["../stylesheets/parents.scss"],
+"names": [],
+"file": "parents.css"
+}

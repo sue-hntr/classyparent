@@ -1,30 +1,33 @@
 class ParentsController < ApplicationController
+#note: put the def parent_user in applications_controller
 
- 	def parent_user
-		if session[:user_id]
-			@current_parent = Parent.find(session[:user_id])
-		end
+#reference only
+ # 	def parent_user
+	# 	if session[:user_id]
+	# 		@current_parent = Parent.find(session[:user_id])
+	# 	end
+	# end
+
+# this is the landing page for the app
+	def start
 	end
 
+#this shows a map of all parents addresses.
 	def index
 		@parent = parent_user
 		gon.geo_parent = @parent
 		@parents = Parent.all
-		# for i in 1..Parent.count
-		# 	if Parent.find(i) != parent_user
 				@hash = Gmaps4rails.build_markers(@parents) do |parent, marker|
   					marker.lat parent.latitude
   					marker.lng parent.longitude
-  				 # puts "XXXXXXXXXXXX"
-  				 # puts Parent.find(i).latitude
-   		# 		end
-  			# end
   		end
-  		puts @hash.inspect
-
 	end
-
-
+#this shows a list of all classyparents and their kids.
+	def allparent
+		@parent = parent_user
+		@all_parent = Parent.all
+		@parent_children = @parent.children
+	end
 
 	def new
 		@parent = Parent.new
@@ -33,6 +36,7 @@ class ParentsController < ApplicationController
 	def create   
 		@parent = Parent.new(parent_params)   
 		if @parent.save
+			flash[:alert] = "Info saved"
 			redirect_to parent_path(@parent.id)
 		else
 			flash[:error] = @parent.errors.full_messages.to_sentence
@@ -47,6 +51,7 @@ class ParentsController < ApplicationController
 	def update
 		@parent = parent_user
 		if 	@parent.update(parent_params)
+			flash[:alert] = "Info updated"
 			redirect_to parent_path(@parent.id)
 		else
 			render :edit
@@ -55,19 +60,8 @@ class ParentsController < ApplicationController
 
 	def show
 		@parent = parent_user
+		@child = @parent.children
 	end
-
-	# p_fname = parent_info[:fname]
-	# p_lname = parent_info[:lname]
-	# p_email = parent_info[:email]
-	# p_cellphone = parent_info[:cellphone]
-	# p_address1 = parent_info[:address1]
-	# p_address2 = parent_info[:address2]
-	# p_city = parent_info[:city]
-	# p_state = parent_info[:state]
-	# p_zipcode = parent_info[:zipcode]
-	# p_password = parent_info[:password]
-
 
 	private
 	def parent_params

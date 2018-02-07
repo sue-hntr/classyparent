@@ -1,19 +1,21 @@
 <!-- sessions.new.html.erb -->
+<div class='parent_clr'>
 <br>
-<h1>ClassyParent Log in</h1>
+<h1>Log In</h1>
+<div class="belly_div">
 <br>
+<%= simple_form_for @parent, url: {controller: :sessions, action: :create} do |f| %>
+<%= f.input :email, label: false, placeholder: "Your email is required" %>
+<%= f.input	:password, label: false, placeholder: "Your 4 digit password is required" %>
 <br>
-<%= form_for @parent, url: {controller: :sessions, action: :create} do |f| %>
-<%= f.label :email %>
-<%= f.text_field :email %>
-<br>
-<br>
-<%= f.label	:password %>
-<%= f.text_field :password%>
-<br>
-<br>
-<%= f.submit "login" %>
+<%= f.button :submit, "Log In", class: "my-button" %>
 <% end %>
-
-
-
+</div><!--  close belly_div -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</div><!--  close parent_clr -->
+ 

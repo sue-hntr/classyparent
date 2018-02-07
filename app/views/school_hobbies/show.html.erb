@@ -1,31 +1,36 @@
 <!-- school.show.html.erb -->
 <br>
+<div class="school_clr">
 <h1>School, Class or Hobby Info</h1>
 <br>
 <br>
-<h3><%= "Teacher or Coach Name:  #{@school.teachername}" %></h3>
+<div class="belly_div">
+	<u>School Name</u>:&nbsp<%= "#{@school.schoolname}" %><br>
+	<u>Class Name</u>:&nbsp<%= "#{@school.class_name}" %><br>
+	<u>Teacher or Coach Name</u>:&nbsp<%= "#{@school.teachername}" %><br>
+	<u>Street Address</u>:&nbsp<%= "#{@school.address1}, #{@school.address2}" %><br>
+	<u>City, State, Zip</u>:&nbsp<%= "#{@school.city}, #{@school.state}, #{@school.zipcode}" %><br>
+	<u>School Phone</u>:&nbsp<%= "#{@school.school_phone}" %><br>
+	<br>
+	<u>Elementary School?</u>:&nbsp<%= "#{@school.is_public_school}" %><br>
+	<br>
+	<u>Child's Grade</u>:&nbsp<%= "#{@school.grade}" %><br>
+	<u>Teacher or Coach Email</u>:&nbsp<%= "#{@school.teacher_email}" %><br>
+	<u>Teacher or Coach Cellphone</u>:&nbsp<%= "#{@school.teacher_cell}" %><br>
+	<u>School Email</u>:&nbsp<%= "#{@school.school_email}" %><br>
+	<u>School Website</u>:&nbsp<%= "#{@school.school_url}" %><br>
+	<u>Emergency Contact Name</u>:&nbsp<%= "#{@school.emergency_contactname}" %><br>
+	<u>Emergency Contact Phone</u>:&nbsp<%= "#{@school.emergency_contactphone}" %><br>
 <br>
-<h3><%= "Class Name:  #{@school.class_name}" %></h3>
+</div><!--  close belly_div -->
 <br>
-<h3><%= "Grade:  #{@school.grade}" %></h3>
-<br>
-<%= "Teacher or Coach email:  #{@school.teacher_email}" %></h3>
-<br>
-<%= "Teacher or Coach Cell:  #{@school.teacher_cell}" %></h3>
-<br>
-<%= "School Name:  #{@school.schoolname}" %></h3><br>
-<%= "School Email:  #{@school.school_email}" %></h3><br>
-<%= "School Website:  #{@school.school_url}" %></h3><br>
-<%= "School Phone:  #{@school.school_phone}" %></h3><br>
-<%= "Emergency Contact Name:  #{@school.emergency_contactname}" %></h3><br>
-<%= "Emergency Contact Phone:  #{@school.emergency_contactphone}" %></h3><br>
-<%= "Street Address:  #{@school.address1}, #{@school.address2}" %></h3>
-<br>
-<%= "City, State, Zip:  #{@school.city}, #{@school.state}, #{@school.zip}" %></h3>
-<br>
-<br>
-<br>
-<%= link_to "Add more schools", new_school_path %>
-<br>
-<br>
-<%= link_to "Add Kids", new_child_path %>
+</div><!--  close school_clr -->
+<div class="yellow_e_div">
+	<%= link_to "Return to Child's Info", child_path(@child.id) %>
+</div>
+<div class="pink_e_div">
+	<%= link_to "Edit This School Info", edit_child_school_hobby_path(id: params[:id]) %>
+</div>
+<div class="yellow_e_div">
+	<%= link_to "Log Out", logout_path, method: :delete %>
+</div>	

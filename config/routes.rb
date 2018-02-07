@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  root 'parents#new'
+  root 'parents#start'
+
+    get  'start' => 'parents#start', as: :start_parent
+    get 'allparents' => "parents#allparent", as: :allparents_parents
+
+    post 'addfriend' => 'children#addfriend', as: :friend_add
+    post 'dropfriend' =>'children#dropfriend', as: :friend_drop
+
+    post 'addschool' => "school_hobbies#addschool", as: :school_add
+    post 'removeschool' => "school_hobbies#dropschool", as: :school_drop
+
+    post 'keepchild' => "school_hobbies#keepchild", as: :school_keepchild
+
 
     get  'login' => 'sessions#new', as: :login
     post   'login' => 'sessions#create'
@@ -8,9 +20,12 @@ Rails.application.routes.draw do
 
   # devise_for :models
 
-  resources :parents, :children, :school_hobbies
+  resources :parents
+  resources :children do
+    resources :school_hobbies
+  end
 
-#join tables below
+#join tables below (take out to test if improve School_hobbies_controller)
   resources :child_attendances, :families, :friendships
 
 

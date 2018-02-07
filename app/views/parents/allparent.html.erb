@@ -1,0 +1,30 @@
+<!-- parents.allparents.html.erb -->
+<div class="parent_clr">
+<h1>Here are other parents and their kids</h1>
+<h4>If your recognize the parent's name and child's name, go to <% link_to "this page", children_path %> to add the child as a friend to your child. </h4>
+<table border="0", style="width:100%">
+	<tr>
+		<td><u>Parent Name</u></td>
+		<td><u>Child's Name</u></td>
+		<td><u>Child's Age</u></td>
+		<td><u>Child's School</u></td>
+	</tr>
+	<% @all_parent.each do |p| %>
+	<tr>
+		<td><%= "#{p.fname} #{p.lname}" %></td>
+		<% if @parent_children.include?(p) %>
+			<td><%= @parent_children.fname %></td>
+			<td><%= @parent_children.age_years %></td>
+			<td><%= @parent_children.hobbyteachone %></td>
+		<% else %>
+			<td>not listed.</td>
+			<td>&nbsp</td>
+			<td>&nbsp</td>
+			<% end %><!--  end if -->
+		</tr>
+	<% end %><!--  end do -->
+</table>
+<br>
+<br>
+<!-- navigation tabs -->
+</div><!--  close parent_clr -->	

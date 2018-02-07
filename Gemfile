@@ -24,15 +24,23 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-# use for grabbing ruby and putting into javascript
+#ADDITIONAL GEMS
+#map gems
 gem 'geocoder'
 gem 'gmaps4rails', '~> 2.1.2'
 gem 'underscore-rails'
+#move variables from ruby to javascript
 gem 'gon'
+#use for development testing
 gem 'pry', '~> 0.10.3'
+#use for generating a simple calendar for parents
+gem "simple_calendar", "~> 2.0"
+# use to make your forms pretty
+gem 'simple_form', '~> 3.2'
 
-
-
+gem 'sass'
+gem 'rack-coffee'
+gem 'bootstrap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,5 +62,7 @@ group :development do
   gem 'spring', '~> 1.4'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#required by bootstrap
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
