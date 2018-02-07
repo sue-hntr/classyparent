@@ -1,1 +1,29 @@
-<h1>Parents Index</h1>
+<!-- parents.index.html.erb(map) -->
+<!-- ####### BODY CODE TAG STARTS ABOVE ########## -->
+  <%= include_gon(:init => true) %>
+<!-- ####### GON CODE TAG from gem file ########## -->
+
+
+<!-- #### This code above from has my API in it  ###### -->
+
+
+
+<h1>Parent Map</h1>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+<!-- ######## GMAPS4RAILS DIV TAGS ABOVE ######## -->
+
+
+
+<div>
+<% @hash.each do |g| %>
+<%= g %> <br/>
+<%end%>
+
+</div>
+<script type="text/javascript">
+  initMap(<%=raw @hash.to_json %>);
+
+
+</script>

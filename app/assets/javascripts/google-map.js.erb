@@ -1,0 +1,130 @@
+// assets.google_maps.js
+
+$(document).ready( function() {//e
+
+  function initMap(hash) {//d
+
+
+// TEST
+  var icon = {  //f  also--> icon used in parentmarker
+      url: "<%= asset_path 'golden_star.png' %>", // url
+      scaledSize: new google.maps.Size(25, 25), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+    var MyLatlng = new google.maps.LatLng( gon.geo_parent.latitude, gon.geo_parent.longitude); //c
+    handler = Gmaps.build('Google');
+    handler.buildMap(
+    { 
+      provider: {
+        zoom:  13,
+        center: MyLatlng
+      }, 
+      internal: {
+        id: 'map'
+      }
+    }, function(){
+  // markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  markers = handler.addMarkers(hash);
+
+  // markers = handler.addMarkers([
+  // {
+  //   "lat": gon.geo_parent.latitude,
+  //   "lng": gon.geo_parent.longitude,
+  //   // "picture": {
+  //   //   "url": "<%= asset_path 'golden_star.png' %>",
+  //   //   "width":  32,
+  //   //   "height": 32
+  //   // },
+  //   "infowindow": "hello!"
+  // }
+  // ]);
+    handler.bounds.extendWith(markers);
+  // handler.fitMapToBounds();
+  // handler.getMap().setZoom(3);
+});
+
+    // // TEST
+
+    // var MyLatlng = new google.maps.LatLng
+    //     ( //c
+    //       gon.geo_parent.latitude, gon.geo_parent.longitude
+    //      ); //c
+
+    //     var map = new google.maps.Map(document.getElementById('map'), {
+    //       zoom:  13,
+    //       center: MyLatlng,
+    //       mapTypeId: google.maps.MapTypeId.ROADMAP
+
+    //     });
+
+    //   var icon = {  //f  also--> icon used in parentmarker
+    //       url: "<%= asset_path 'golden_star.png' %>", // url
+    //       scaledSize: new google.maps.Size(25, 25), // scaled size
+    //       origin: new google.maps.Point(0,0), // origin
+    //       anchor: new google.maps.Point(0, 0) // anchor
+    //   }; //f
+
+    //   var parentmarker = new google.maps.Marker({
+    //     position: MyLatlng,
+    //     map: map,
+    //     icon: icon
+    //   });
+    //   parentmarker.setMap(map);
+    //   // this function is from GMaps4rails loop in parent controller  
+
+    //   function otherParentMarkers() { //g
+    //     markers = handler.addMarkers("<%= raw @hash.to_json %>");
+    //     handler.bounds.extendWith(markers);
+    //     handler.fitMapToBounds();
+    //     } //g
+
+  } //d
+}); //e
+
+
+
+
+
+
+
+
+// 
+
+
+
+
+
+ function initMap(hash) {//d
+
+
+// TEST
+  // var icon = {  //f  also--> icon used in parentmarker
+  //     url: "<%= asset_path 'golden_star.png' %>", // url
+  //     scaledSize: new google.maps.Size(25, 25), // scaled size
+  //     origin: new google.maps.Point(0,0), // origin
+  //     anchor: new google.maps.Point(0, 0) // anchor
+  //   };
+console.log(hash);
+    var MyLatlng = new google.maps.LatLng( gon.geo_parent.latitude, gon.geo_parent.longitude); //c
+    handler = Gmaps.build('Google');
+    handler.buildMap(
+    { 
+      provider: {
+        zoom: 11,
+        center: MyLatlng
+      }, 
+      internal: {
+        id: 'map'
+      }
+    }, function(){
+  // markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  markers = handler.addMarkers(hash);
+
+  handler.bounds.extendWith(markers);
+  // handler.fitMapToBounds();
+  // handler.getMap().setZoom(3);
+});
+
+  } //d

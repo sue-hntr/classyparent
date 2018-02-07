@@ -9,18 +9,24 @@
 <br>
 <h3><%= "Cellphone:  #{@parent.cellphone}" %></h3>
 <br>
-<%= "Street Address:  #{@parent.address1}, #{@parent.address2}" %></h3>
+<%= "Street Address:  #{@parent.address1} #{@parent.address2}" %></h3>
 <br>
-<%= "City, State, Zip:  #{@parent.city}, #{@parent.state}, #{@parent.zip}" %></h3>
+<%= "City, State, Zip:  #{@parent.city}, #{@parent.state}, #{@parent.zipcode}" %></h3>
 <br>
 <%= "Password:  #{@parent.password}" %></h3>
 <br>
 <br>
 <br>
+<%= link_to "EDIT your information ", edit_parent_path(@parent.id) %>
 
 <%= link_to "Add more parents", new_parent_path %>
 <br>
 <br>
 <%= link_to "Add Kids", new_child_path %>
-
+<br>
+<br>
+<%= link_to "Log Out", logout_path, method: :delete %>
+<br>
+<br>
+<%= link_to "MAP", parents_path %>
 

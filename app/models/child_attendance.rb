@@ -1,5 +1,4 @@
 class ChildAttendance < ActiveRecord::Base
-	has_many	:children
-	has_many	:school_hobbies
-
+	belongs_to	:children
+	belongs_to	:school_hobbies
 end
