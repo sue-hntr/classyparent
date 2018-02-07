@@ -13,22 +13,25 @@ class ChildrenController < ApplicationController
 #list of friends methods start
 	def index
 		@parent = parent_user
-		@child = @parent.children
-		@make_friends = Child.all
-		@new_friends = @child.playfriends
-		@school = @child.schools
+		@friends = Child.all
+		@child = Child.find(params[:child_id])
+		@playfriends = Friendship.where(child_id: (params[:child_id]))
 	end
 
 	def addfriend
 		@parent = parent_user
-		@playfriend = Child.find(params[:id])
-		@child.playfriends << @playfriend
+		@child = Child.find(params[:child_id])
+		@friends = Child.all
+		@playfriends = Friendship.where(child_id: (params[:child_id]))
+		@playfriend_add = Friendship.find(playfriend_id: ())
+		@playfriends << @playfriend_add
 		redirect_to children_path
 	end
 
 	def dropfriend
 		@parent = parent_user
-		@playfriend = Child.find(params[:id])
+		@child = Child.find(params[:child_id])
+		@playfriends = Friendship.where(child_id: (params[:child_id]))
 		@child.playfriends.destroy(@playfriend)
 		redirect_to children_path
 	end
@@ -84,15 +87,9 @@ class ChildrenController < ApplicationController
 
 	def show 
 		@parent = parent_user
-		puts "XXXXXX"
-		puts params
-		puts "YYYYYYY"
-		puts params[:id]
 		@child = Child.find(params[:id])
 		@current_child = @child
-		puts "ZZZZZZ"
 		puts @current_child.id
-		#binding.pry
 	end
 
 	private

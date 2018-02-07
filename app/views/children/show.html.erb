@@ -22,6 +22,9 @@
 <div class="pink_e_div">
 	<%= link_to "Return to your Family Listing", parent_path(@parent.id) %>
 </div>
+<div class="pink_e_div"> 
+	<%= link_to "List of friends and potential playmates", children_path(child_id: @child.id) %>
+</div>	
 <div class="yellow_e_div">
 	<%= link_to "Add Your Child's School and Activity Details", new_child_school_hobby_path(child_id: @child.id) %> 
 </div>

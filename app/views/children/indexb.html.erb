@@ -1,0 +1,27 @@
+<!-- SAVE THIS CODE FOR FINAL PAGE -->
+<!-- children.index.html.erb -->
+<div class="child_clr">
+<!-- ####### child.playfriends ####### -->
+<h1> BFFs that you already have: </h1>
+	<div class="fourCol_belly_div">
+		<table border = "0", style="width=100%">
+			<tr>
+				<td><u>Child's Name</u></td>
+				<td><u>Child's Age</u></td>
+				<td><u>Child's School</u></td>
+			</tr>
+			<tr>
+				<% @friends.each do |f| %>
+					<% if @playfriends.where(playfriend_id:f) != [] %>
+						<td><%= "#{f.fname}  #{f.lname}" %></td>
+						<td><%= f.age_years %></td>
+						<td><%= f.hobbyteachone %></td>
+			</tr>
+						<% end %><!--   end if friends include --> 
+						<% end %>
+			</table>
+	</div><!--  close fourCol_belly_div -->
+<br>
+<br>
+</div>
+<br>
